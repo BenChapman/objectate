@@ -1,0 +1,5 @@
+<uL>
+	<?php foreach($this->index->index as $poem): ?>
+		<li><a href="/poems/<?php echo str_replace(" ", "_", strtolower($poem)); ?>"><?php echo $poem; ?></a></li>
+	<?php endforeach; ?>
+</ul>
