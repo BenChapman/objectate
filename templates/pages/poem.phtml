@@ -9,8 +9,8 @@
 		
 		<br/> 
 		
-		<?php foreach($this->poem->getLines() as $id => $line): ?>
-			<span id="line<?php echo $id+1; ?>" onclick="underline2(<?php echo $id+1; ?>)"><?php echo $id+1; ?>. <?php echo $line; ?><br/></span>
+		<?php foreach($this->poem->lines as $id => $line): ?>
+			<span id="line<?php echo $id+1; ?>" onclick="underline2(<?php echo $id+1; ?>)"><?php echo $id+1; ?>. <?php echo $line['text']; ?><br/></span>
 		<?php endforeach; ?>
 	</div>
 
@@ -25,7 +25,7 @@
 			<select name="Lines" id="linebox" onchange="linecol2()">
 
 				<option></option>
-				<?php for($i = 1; $i <= count($this->poem->getLines()); $i++): ?>
+				<?php for($i = 1; $i <= count($this->poem->lines); $i++): ?>
 					<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 				<?php endfor; ?>
 			</select>

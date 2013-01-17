@@ -17,14 +17,10 @@
 			</div>
 			
 			<div id="links">
-				<span id="homespan"><a href="index.php" class="navlinks">Home</a></span>
-				<span id="tradspan"><a href="traditional.php" class="navlinks">Traditional</a></span>
-				<span id="haikuspan"><a href="haiku.php" class="navlinks">Haikus</a></span>
-				<span id="upspan"><a href="uploads.php" class="navlinks">Uploads</a></span>
 			</div>
 
 			<div id="lineoftheday">
-				<?php //echo $this->lotd; ?>No lines today.
+				<?php echo $this->lotd; ?>
 			</div>
 				
 			<?php $this->render($this->contents); ?>
