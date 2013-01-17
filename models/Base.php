@@ -32,7 +32,7 @@ abstract class Anontate_Base {
 		));
 		
 		if(!empty($filename)) {
-			return $this->_prefix . $filename . $this::FILE_FORMAT;
+			return BASE_DIR . "/" . $this->_prefix . $filename . $this::FILE_FORMAT;
 		} else {
 			throw new Exception("No filename set");
 		}

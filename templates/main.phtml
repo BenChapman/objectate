@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Anontate.com - Poetry in Notation</title>
+		<link rel="icon" type="image/png" href="/favicon.ico">
+		<!-- Two nice Google Web Fonts being used here -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Volkhov' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="/styles/style.css">
+		<script src="/scripts/poetry.js"></script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1 id="title">Poetry in Notation</h1>
+			</div>
+			
+			<div id="links">
+				<span id="homespan"><a href="index.php" class="navlinks">Home</a></span>
+				<span id="tradspan"><a href="traditional.php" class="navlinks">Traditional</a></span>
+				<span id="haikuspan"><a href="haiku.php" class="navlinks">Haikus</a></span>
+				<span id="upspan"><a href="uploads.php" class="navlinks">Uploads</a></span>
+			</div>
+
+			<div id="lineoftheday">
+				<?php //echo $this->lotd; ?>No lines today.
+			</div>
+				
+			<?php $this->render($this->contents); ?>
+		</div>
+
+	</body>
+
+</html>

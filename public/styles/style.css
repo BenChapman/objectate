@@ -1,0 +1,239 @@
+body{  
+	background-image:url('../images/poembg5.jpg');
+}
+
+#container{
+	width: 900px;
+	margin: auto;
+	border: 2px solid #B6B2AD;
+	background-color:#F3ECE2;
+	height: 1050px;
+	font-family: 'Volkhov', serif;
+}
+
+#header{
+	text-align: center;
+	font-size: 45px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	color: #B6B2AD;
+}
+
+#title{
+	margin: 0;
+}
+
+#links{
+	font-size: 20px;
+	text-align: center;
+	background-color: #9E7B49;
+	height: 25px;
+	border-top: 2px solid #B6B2AD;
+	border-bottom: 2px solid #B6B2AD;
+}
+
+#homespan{
+	width: 220px;
+	border-right: 2px solid #B6B2AD;
+	float: left;
+}
+
+#tradspan{
+	width: 223px;
+	float: left;
+	border-right: 2px solid #B6B2AD;
+}
+
+#haikuspan{
+ width: 223px;
+ float: left;
+ border-right: 2px solid #B6B2AD;
+}
+
+#upspan{
+ width: 228px;
+ float: left;
+
+}
+
+a.navlinks:link {
+	text-decoration:none;
+	color: #F3ECE2;
+	display:block;
+}   
+
+a.navlinks:visited {
+	text-decoration:none;
+	color: #F3ECE2;
+} 
+
+a.navlinks:hover {
+	text-decoration:none;
+	color: #9E7B49;
+	background-color: #F3ECE2;
+
+}   
+
+a.navlinks:active {
+	text-decoration:none;
+	color: #9E7B49;
+	background-color: #F3ECE2;
+}  
+
+#lineoftheday{
+	height: 25px;
+	border-bottom: 2px solid #B6B2AD;
+	font-size: 19px;
+	font-family: "Times New Roman", serif;
+	padding-left: 40px;
+	padding-top: 3px;
+}
+
+#content{
+	margin-left: 10px;
+}
+
+#poemform{
+	margin-left: 10px;
+}
+
+#poemcontainer span{
+	cursor: pointer;
+}
+
+.annotbox{
+	height: 100px; 
+	width: 400px;
+}
+
+
+/* first-letter is a nice CSS3 addition that was utilised here to get a drop capital effect on the main content in the index page. */
+p#home1:first-letter{
+	display:block;
+	float:left;
+	font-size: 310%;
+	line-height: 90%;
+	margin-right: 6px;
+	margin-bottom:-2px;
+	margin-top: 7px;
+}
+
+/* multiple columns are another CSS3 addition which was used to fill up the index page in a way that almost resembled poem structures. It required prefixs to get good browser support coverage */ 
+#homesection1{
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	column-count:2;
+	-moz-column-gap:90px; 
+	-webkit-column-gap:90px; 
+	column-gap:90px;
+	padding-left: 90px;
+	padding-right: 90px;
+	font-size: 15px;
+}
+
+#homesection2{
+	text-align: center;
+	font-style: oblique;
+}
+
+
+#handwriting{
+	width: 307px;
+	height: 184px;
+	padding-left: 80px;
+	float: left;
+}
+
+#homesection4{
+	padding-top:68px;
+}
+
+a#Takeme{
+	color: #000000;
+	display: inline;
+	font-size: 45px;
+	text-decoration:underline;
+	padding-left: 5px;
+}
+
+a#Takeme:visited {
+	color: #000000;
+} 
+
+a#Takeme:hover {
+	color: #9E7B49;
+}   
+
+a#Takeme:active {
+	color: #000000;
+}
+
+h2{
+	margin: 0;
+	color: #888683;
+}
+
+#poemcontainer{
+	width: 500px;
+	float: left;
+}
+
+#commentbox{
+	width: 300px;
+	float: left;
+	margin-top: 250px;
+	border: 2px solid #B6B2AD;
+	border-radius:25px;
+	padding: 30px;
+}
+
+#commentbox span{
+	display: none;
+}
+
+#commentbox span#comment0{
+	display: inline;
+}
+
+#uploadform{
+	width: 370px;
+	margin-left: 10px;
+	float: left;
+}
+
+/* white-space:pre; was invaluable for us getting each line of the poem to have it's own new line on the page */
+#otherdivs div{
+	margin-top: 20px;
+	float: left;
+	white-space:pre;
+	display: none;
+	margin-left: 90px;
+}
+
+.needcursors{
+	cursor: pointer;
+}
+
+#sublinks{
+	height: 25px;
+	border-bottom: 2px solid #B6B2AD;
+	font-size: 20px;
+	text-align: center;
+}
+
+a.sublinks{
+	color: #888683;
+	text-decoration:underline;
+}
+
+a.sublinks:visited {
+	color: #888683;
+} 
+
+a.sublinks:hover {
+	color: #9E7B49;
+}   
+
+a.sublinks:active {
+	color: #888683;
+}

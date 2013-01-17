@@ -1,0 +1,95 @@
+<div id="poemcontainer">
+
+	<div id="content">
+		<br>
+		<h2><?php echo $this->poem->name ?></h2>
+		<?php if($this->poem->poet): ?>
+			by <?php echo $this->poem->poet; ?><br>
+		<?php endif; ?>
+		
+		<br/> 
+		
+		<?php foreach($this->poem->getLines() as $id => $line): ?>
+			<span id="line<?php echo $id+1; ?>" onclick="underline2(<?php echo $id+1; ?>)"><?php echo $id+1; ?>. <?php echo $line; ?><br/></span>
+		<?php endforeach; ?>
+	</div>
+
+	<br/>
+
+	<div id="poemform">
+
+		<form id="Anontate" method="post">
+
+			Select the line you wish to annotate:
+
+			<select name="Lines" id="linebox" onchange="linecol2()">
+
+				<option></option>
+				<?php for($i = 1; $i <= count($this->poem->getLines()); $i++): ?>
+					<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+				<?php endfor; ?>
+			</select>
+
+			<br/>
+
+			<textarea class="annotbox" name="comment" value="comment" required placeholder="Annotate to your heart's content."></textarea>
+			
+			<br/>
+
+			<input type="submit" value="Submit">
+
+		</form>
+
+
+	</div>
+
+</div>
+
+
+<div id="commentbox">
+
+	<span id="comment0">Click on a line to see some annotations.</span>
+	<span id="comment1">1.
+		
+	</span>
+	<span id="comment2">2.
+		
+	</span>
+	<span id="comment3">3.
+			
+	</span>
+	<span id="comment4">4.
+			
+	</span>
+	<span id="comment5">5.
+			
+	</span>
+	<span id="comment6">6.
+			
+	</span>
+	<span id="comment7">7.
+			
+	</span>
+	<span id="comment8">8.
+			
+	</span>
+	<span id="comment9">9.
+		
+	</span>
+	<span id="comment10">10.
+		
+	</span>
+	<span id="comment11">11.
+		
+	</span>
+	<span id="comment12">12.
+		
+	</span>
+	<span id="comment13">13.
+		
+	</span>
+	<span id="comment14">14.
+		
+	</span>
+
+</div>
