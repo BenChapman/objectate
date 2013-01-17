@@ -25,6 +25,14 @@ with('/poems',function() use ($view_data) {
 		$view_data['poem'] = new Anontate_Poem(urldecode($request->name));
 		$response->render(__DIR__ . '/../templates/main.phtml', $view_data);
 	});
+	respond('POST', '/[:name]', function($request, $response) {
+		$request->validate('line', 'Please select a line')->isInt();
+		$request->validate('text', 'Please enter some text')->notNull();
+		$poem = new Anontate_Poem(urldecode($request->name));
+		$poem->annotations->add_annotation($request->line, $request->text);
+		$poem->save();
+		$response->redirect('/poems/'.$request->name);
+	});
 });
 
 

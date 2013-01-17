@@ -8,11 +8,15 @@ class Anontate_Poem extends Anontate_Base {
 	public $poet;
 	public $type;
 	public $lines = array();
+	public $annotations;
 		
 	public function __construct($name = false) {
 		if($name) {
 			$this->_filename = $name;
 			parent::__construct();
+			$this->annotations = new Anontate_Annotations($name);
+		} else {
+			$this->annotations = new Anontate_Annotations;
 		}
 	}
 	
@@ -27,6 +31,7 @@ class Anontate_Poem extends Anontate_Base {
 	
 	public function save() {
 		$this->_filename = $this->name;
+		$this->annotations->save();
 		parent::save();
 	}
 	

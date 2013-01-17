@@ -22,7 +22,7 @@
 
 			Select the line you wish to annotate:
 
-			<select name="Lines" id="linebox" onchange="linecol()">
+			<select name="line" id="linebox" onchange="linecol()">
 
 				<option></option>
 				<?php for($i = 1; $i <= count($this->poem->lines); $i++): ?>
@@ -32,7 +32,7 @@
 
 			<br/>
 
-			<textarea class="annotbox" name="comment" value="comment" required placeholder="Annotate to your heart's content."></textarea>
+			<textarea class="annotbox" name="text" required placeholder="Annotate to your heart's content."></textarea>
 			
 			<br/>
 
@@ -50,7 +50,17 @@
 
 	<span id="comment0">Click on a line to see some annotations.</span>
 	<?php for($i = 1; $i <= count($this->poem->lines); $i++): ?>
-		<span id="comment<?php echo $i; ?>"><?php echo $i; ?>. </span>
+		<span id="comment<?php echo $i; ?>">
+			<?php 
+			
+			if($annotation = $this->poem->annotations->get_random_annotation($i)) {
+				echo $this->escape($annotation);
+			} else {
+				echo "There are no annotations for this line";
+			}
+					
+			?>
+		</span>
 	<?php endfor;?>
 	
 </div>

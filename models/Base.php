@@ -21,7 +21,11 @@ abstract class Anontate_Base {
 	}
 	
 	public function save() {
-		return file_put_contents($this->_getFilename(), serialize($this));
+		if(file_exists($this->_getFilename())) {
+			throw new Exception("That exists already, pick a new name");
+		} else {
+			return file_put_contents($this->_getFilename(), serialize($this));
+		}
 	}
 	
 	private function _getFilename() {
