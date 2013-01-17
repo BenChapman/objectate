@@ -10,7 +10,7 @@
 		<br/> 
 		
 		<?php foreach($this->poem->lines as $id => $line): ?>
-			<span id="line<?php echo $id+1; ?>" onclick="underline2(<?php echo $id+1; ?>)"><?php echo $id+1; ?>. <?php echo $line['text']; ?><br/></span>
+			<span id="line<?php echo $id+1; ?>" class="line" onclick="underline(<?php echo $id+1; ?>)"><?php echo $id+1; ?>. <?php echo $line['text']; ?><br/></span>
 		<?php endforeach; ?>
 	</div>
 
@@ -22,7 +22,7 @@
 
 			Select the line you wish to annotate:
 
-			<select name="Lines" id="linebox" onchange="linecol2()">
+			<select name="Lines" id="linebox" onchange="linecol()">
 
 				<option></option>
 				<?php for($i = 1; $i <= count($this->poem->lines); $i++): ?>
@@ -49,47 +49,8 @@
 <div id="commentbox">
 
 	<span id="comment0">Click on a line to see some annotations.</span>
-	<span id="comment1">1.
-		
-	</span>
-	<span id="comment2">2.
-		
-	</span>
-	<span id="comment3">3.
-			
-	</span>
-	<span id="comment4">4.
-			
-	</span>
-	<span id="comment5">5.
-			
-	</span>
-	<span id="comment6">6.
-			
-	</span>
-	<span id="comment7">7.
-			
-	</span>
-	<span id="comment8">8.
-			
-	</span>
-	<span id="comment9">9.
-		
-	</span>
-	<span id="comment10">10.
-		
-	</span>
-	<span id="comment11">11.
-		
-	</span>
-	<span id="comment12">12.
-		
-	</span>
-	<span id="comment13">13.
-		
-	</span>
-	<span id="comment14">14.
-		
-	</span>
-
+	<?php for($i = 1; $i <= count($this->poem->lines); $i++): ?>
+		<span id="comment<?php echo $i; ?>"><?php echo $i; ?>. </span>
+	<?php endfor;?>
+	
 </div>
