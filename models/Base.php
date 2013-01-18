@@ -1,6 +1,8 @@
 <?php
 
-abstract class Anontate_Base {
+namespace Anontate;
+
+abstract class Base {
 	
 	const FILE_FORMAT = ".dat";
 	

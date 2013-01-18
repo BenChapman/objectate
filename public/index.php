@@ -1,5 +1,7 @@
 <?php 
 
+namespace Anontate;
+
 // Load all the things
 require_once __DIR__ . '/../loader.php';
 
@@ -17,7 +19,7 @@ respond('GET', '/', function($request, $response) use ($view_data) {
 with('/poems',function() use ($view_data) {
 	respond('GET', '/?', function($request, $response)  use ($view_data) {
 		$view_data['contents'] = __DIR__ . '/../templates/pages/poem_index.phtml';
-		$view_data['index'] = new Anontate_Index('poems');
+		$view_data['index'] = new Index('poems');
 		$response->render(__DIR__ . '/../templates/main.phtml', $view_data);
 	});
 	respond('GET', '/new', function($request, $response)  use ($view_data) {
@@ -29,7 +31,7 @@ with('/poems',function() use ($view_data) {
 		$request->validate('poet', 'Who is the poet?')->isAlpha();
 		$request->validate('type', 'What\'s the type?')->isAlpha();
 		$request->validate('lines', 'What\'s the poem?')->notNull();
-		$poem = new Anontate_Poem;
+		$poem = new Poem;
 		$poem->name = $request->name;
 		$poem->annotations->poem_name = $request->name;
 		$poem->poet = $request->poet;
@@ -43,14 +45,14 @@ with('/poems',function() use ($view_data) {
 	});
 	respond('GET', '/[:name]', function($request, $response)  use ($view_data) {
 		$view_data['contents'] = __DIR__ . '/../templates/pages/poem.phtml';
-		$view_data['poem'] = new Anontate_Poem(urldecode($request->name));
+		$view_data['poem'] = new Poem(urldecode($request->name));
 		$response->render(__DIR__ . '/../templates/main.phtml', $view_data);
 	});
 	respond('POST', '/[:name]', function($request, $response) {
 		if($request->name == "new") { return false; }
 		$request->validate('line', 'Please select a line')->isInt();
 		$request->validate('text', 'Please enter some tm ext')->notNull();
-		$poem = new Anontate_Poem(urldecode($request->name));
+		$poem = new Poem(urldecode($request->name));
 		$poem->annotations->add_annotation($request->line, $request->text);
 		$poem->save();
 		$response->redirect('/poems/'.$request->name);

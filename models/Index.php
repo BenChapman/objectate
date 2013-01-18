@@ -1,6 +1,8 @@
 <?php
 
-class Anontate_Index {
+namespace Anontate;
+
+class Index {
 	
 	private $_type;
 	public $index = array();
@@ -8,10 +10,10 @@ class Anontate_Index {
 	public function __construct($type = "poems") {
 		$this->_type = strtolower($type);
 		if($this->_type == 'poems') {
-			$index = glob(BASE_DIR . '/poems/*' . Anontate_Base::FILE_FORMAT);
+			$index = glob(BASE_DIR . '/poems/*' . Base::FILE_FORMAT);
 			foreach($index as $card) {
 				$replaced[0] = str_replace(BASE_DIR . '/poems/', '', $card);
-				$replaced[1] = str_replace(Anontate_Base::FILE_FORMAT, "", $replaced[0]);
+				$replaced[1] = str_replace(Base::FILE_FORMAT, "", $replaced[0]);
 				$this->index[] = ucwords(str_replace("_", " ", $replaced[1]));
 			}
 			unset($index);

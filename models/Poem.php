@@ -1,6 +1,8 @@
 <?php
 
-class Anontate_Poem extends Anontate_Base {
+namespace Anontate;
+
+class Poem extends Base {
 
 	protected $_prefix = 'poems/';
 	
@@ -14,9 +16,9 @@ class Anontate_Poem extends Anontate_Base {
 		if($name) {
 			$this->_filename = $name;
 			parent::__construct();
-			$this->annotations = new Anontate_Annotations($name);
+			$this->annotations = new Annotations($name);
 		} else {
-			$this->annotations = new Anontate_Annotations;
+			$this->annotations = new Annotations;
 		}
 	}
 	

@@ -1,6 +1,8 @@
 <?php
 
-class Anontate_Annotations extends Anontate_Base {
+namespace Anontate;
+
+class Annotations extends Base {
 	
 	protected $_prefix = "annotations/";
 	
