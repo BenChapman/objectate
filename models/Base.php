@@ -30,7 +30,7 @@ abstract class Anontate_Base {
 			FILTER_SANITIZE_STRING,
 			array( 'flags' => FILTER_FLAG_STRIP_HIGH )
 		));
-		
+				
 		if(!empty($filename)) {
 			return BASE_DIR . "/" . $this->_prefix . $filename . $this::FILE_FORMAT;
 		} else {
